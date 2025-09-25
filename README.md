@@ -6,19 +6,19 @@ This driver supports only the Bluecharm Beacon Scanner Gateway BCG04 in an MQTT 
 Bluetooth low-energy (BLE) devices can be useful features in a home automation setup.  They can be especially useful as presence sensors:  a replacement for the old and no-longer-available SmartThings presence sensor, or as a more reliable substitute for cellphone presence within Smartthings.  
 
 ### Features
-Supports multiple BCG04 gateways
-Supports multiple beacon devices
-Supports presence, button pushes (single/double/triple/long), and motion
-Supports TLM data if enabled on the beacon device, which provides battery, device temperature, and signal strength
-Configurable grace period to determine away/not-present condition
+- Supports multiple BCG04 gateways
+- Supports multiple beacon devices
+- Supports presence, button pushes (single/double/triple/long), and motion
+- Supports TLM data if enabled on the beacon device, which provides battery, device temperature, and signal strength
+- Configurable grace period to determine away/not-present condition
 
 ### Pre-requisites:
-* Bluecharm BCG04
-* Bluecharm BC021 or similar
-* MQTT Broker (e.g. Mosquitto running on Raspberry Pi); server must be on the same subnet as your SmartThings hub
+- Bluecharm BCG04
+- Bluecharm BC021 or similar
+- MQTT Broker (e.g. Mosquitto running on Raspberry Pi); server must be on the same subnet as your SmartThings hub
 
 ## Driver Install and Configuration
-Get the driver from my Test Channel here --> https://bestow-regional.api.smartthings.com/invite/Q1jP7BqnNNlL
+[Get the driver from my Test Channel here](https://bestow-regional.api.smartthings.com/invite/Q1jP7BqnNNlL)
 
 Once the driver has been installed on your SmartThings hub, from the mobile app, perform an Add Device / Scan nearby and a new device will be created called "Bluecharm MQTT".  Look for this device and open it.  From its Controls screen tap the 3 vertical dot menu in the upper right corner to select device Settings.  Here, provide your MQTT Broker username & password, and its IP address (make sure you have this IP address set as static on your router so it does not change).  If successful, you should see "Connected to Broker" back on the device Controls screen.  The Refresh button there can be used to force a re-connection with the broker, although this is really only needed as a last resort.
 
@@ -27,13 +27,14 @@ From the Bluecharm MQTT device Controls screen, tap the top field "Select & Crea
 
 Once a beacon type is selected, a new device will be created.  Find it, open it, and go to the device Settings screen as descibed above.
 Configure the settings as follows:
+
 #### MQTT Topic Prefix
 This should ordinarily not be changed, and should always contain "bluecharm/publish"
 #### Gateway MAC Addresses
 Note this says "Addresses" plural.  This means you can list more than one MAC address separated by commas.  You can find your BCG04 Gateway MAC address either from a label on the device itself, or by the KGateway app that is used to configure it.  Provide one or several MAC address
-
+--
 A note about MAC Addresses:  These must be 6 pairs of hexidecimal characters.  They can be entered as either a continuous sequence of 12 characters or 6 pairs separated with colons.
-
+--
 #### iBeacon MAC Address
 Find your BC021 MAC address either from a label on the device itself, or by the KBeacon app used to configure it.  You only provide one MAC address corresponding to a physical iBeacon/Multibeacon.
 
