@@ -1,0 +1,5 @@
+name: 'Bluecharm Beacons V0.9'
+packageKey: 'bluecharmv1'
+permissions:
+    lan: {}
+    discovery: {}

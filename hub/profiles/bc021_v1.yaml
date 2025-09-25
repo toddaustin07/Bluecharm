@@ -1,0 +1,70 @@
+name: bc021_v1
+components:
+  - id: main
+    label: Beacon
+    capabilities:
+      - id: presenceSensor
+        version: 1
+      - id: motionSensor
+        version: 1
+      - id: button
+        version: 1
+      - id: battery
+        version: 1
+      - id: temperatureMeasurement
+        version: 1
+      - id: signalStrength
+        version: 1
+      - id: partyvoice23922.status
+        version: 1
+    categories:
+      - name: PresenceSensor
+metadata:
+  ocfDeviceType: x.com.st.d.sensor.presence
+preferences:
+  - title: "MQTT Topic Prefix"
+    name: subTopic
+    description: "MQTT Subscribe Topic Prefix"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      default: "bluecharm/publish"
+  - title: "Gateway MAC Addresses"
+    name: gmacs
+    description: "Comma-delimited list of BCG04 Gateway MAC Addresses"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      minLength: 12
+      default: "BC:57:xx:xx:xx:xx"      
+  - title: "iBeacon MAC Address"
+    name: dmac
+    description: "MAC Address / System ID"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      minLength: 12
+      maxLength: 17
+      default: "DD:34:xx:xx:xx:xx"
+  - title: "UUID"
+    name: uuid
+    description: "iBeacon UUID"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      minLength: 36
+      maxLength: 36
+      default: "00000000-0000-0000-0000-000000000000"
+  - title: "NOT PRESENT Grace Period"
+    name: notpresenttimeout
+    description: "# Seconds elapsed after last-reported beacon before not-present is assumed"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 5
+      maximum: 600
+      default: 60
