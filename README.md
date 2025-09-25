@@ -59,7 +59,8 @@ The settings you use will depend on what you are trying to accomplish.  My exper
 ```
   Advertising Interval:  5 seconds
   Transmission Power:  2-3 dBm
-  Beacon Type:  for regular operation, iBeacon only (which will cover general presence, motion, and button pushes0, but during testing and to monitor battery useage you may want to temporarily include TLM
+  Beacon Type:  for regular operation, iBeacon only (which will cover general presence, motion, and button pushes),
+                but during testing and to monitor battery useage you may want to temporarily include TLM
   Trigger commmand
     Motion Trigger
       Enable trigger
@@ -74,7 +75,8 @@ The settings you use will depend on what you are trying to accomplish.  My exper
       Type: iBeacon
       Trigger Adv Time: 10 seconds
       Trigger Adv Interval:  2000 ms
-      Trigger parameters -> Double click    Note that this follows recommendation of documentation.  Single clicks can too often be done accidently while banging around a purse or pocket.
+      Trigger parameters -> Double click    Note that this follows recommendation of documentation.
+                            Single clicks can too often be done accidently while banging around a purse or pocket.
 ```
 Note that Pro configuration is a bit more complex and not covered here.  I can provide my settings upon request.
 
