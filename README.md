@@ -32,17 +32,17 @@ Configure the settings as follows:
 This should ordinarily not be changed, and should always contain "bluecharm/publish"
 
 #### Gateway MAC Addresses
-Note this says "Addresses" plural.  This means you can list more than one MAC address separated by commas.  You can find your BCG04 Gateway MAC address either from a label on the device itself, or by the KGateway app that is used to configure it.  Provide one or several MAC address
+Note this says "Addresses" plural.  This means you can list more than one MAC address separated by commas.  You can find your BCG04 Gateway MAC address either from a label on the device itself, or by the **KGateway** app that is used to configure it.  Provide one or several MAC address
 
---
+---
 A note about MAC Addresses:  These must be 6 pairs of hexidecimal characters.  They can be entered as either a continuous sequence of 12 characters or 6 pairs separated with colons.
---
+---
 
 #### iBeacon MAC Address
-Find your BC021 MAC address either from a label on the device itself, or by the KBeacon app used to configure it.  You only provide one MAC address corresponding to a physical iBeacon/Multibeacon.
+Find your BC021 MAC address either from a label on the device itself, or by the **KBeacon** app used to configure it.  You only provide one MAC address corresponding to a physical iBeacon/Multibeacon.
 
 #### UUID
-The iBeacon/Multibeacon UUID is a unique 32 hexidecimal character identifier which you will find in the KBeacon app configuration screens.  Carefully copy/paste this ID from the KBeacon app into the SmartThings device Settings screen so as not to make a mistake.  This ID must contain dashes ("-") between the UUID segments.  They are not optional.  Note that the UUID can optionally be uniquely configured for Pro ibeacon devices, so be sure you've entered the correct ID for regular advertisements.
+The iBeacon/Multibeacon UUID is a unique 32 hexidecimal character identifier which you will find in the KBeacon app configuration screens.  Carefully copy/paste this ID from the KBeacon app into the SmartThings device Settings screen so as not to make a mistake.  This ID must contain dashes ("-") between the UUID segments.  They are not optional.  Note that the UUID can optionally be uniquely configured for Pro iBeacon devices, so be sure you've entered the correct ID for regular advertisements.
 
 #### NOT PRESENT Grace Period
 When a gateway is no longer receiving advertisements from a BLE device, it is assumed to be out of range.  For our purposes, we assume that the device is no longer present.  However, how long to wait until you assume the device is no longer present can depend on many things including configuration settings and environment.  So this device Settings field allows the user to adjust this "grace period" anywhere from 5 seconds to 10 minutes.
