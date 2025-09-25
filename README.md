@@ -6,7 +6,7 @@ This driver supports only the Bluecharm Beacon Scanner Gateway BCG04 in an MQTT 
 Bluetooth low-energy (BLE) devices can be useful features in a home automation setup.  They can be especially useful as presence sensors:  a replacement for the old and no-longer-available SmartThings presence sensor, or as a more reliable substitute for mobile device location presence within Smartthings.
 
 #### MQTT
-One may also wonder why MQTT is required.  The Bluecharm GCG04 Gateway does in fact also support regular wifi-based communication and theoretically this could be made to work with a SmartThings driver, but only with the use of my edgebridge solution.  However if you'd need another always-on computer to implement an edgebridge-based solution, you may as well be running a simple MQTT broker like Mosquitto to make things simpler and more standard.  MQTT was the quickest route to getting this up and running for me.
+One may also wonder why MQTT is required.  The Bluecharm GCG04 Gateway does in fact also support regular wifi-based communication, however because other network apps can't initiate communication to a Smartthings hub Edge driver, it probably cannot be made to work.  MQTT was the quickest route to getting this up and running for me.  Perhaps Matter will be supported in the future, which would make this driver obsolete.
 
 ### Features
 - Supports multiple BCG04 gateways
