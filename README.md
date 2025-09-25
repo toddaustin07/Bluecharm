@@ -42,20 +42,20 @@ Note this says "Addresses" plural.  This means you can list more than one MAC ad
 Find your BC021 MAC address either from a label on the device itself, or by the **KBeacon** app used to configure it.  You only provide one MAC address corresponding to a physical iBeacon/Multibeacon.
 
 #### UUID
-The iBeacon/Multibeacon UUID is a unique 32 hexidecimal character identifier which you will find in the KBeacon app configuration screens.  Carefully copy/paste this ID from the KBeacon app into the SmartThings device Settings screen so as not to make a mistake.  This ID must contain dashes ("-") between the UUID segments.  They are not optional.  Note that the UUID can optionally be uniquely configured for Pro iBeacon devices, so be sure you've entered the correct ID for regular advertisements.
+The iBeacon/Multibeacon UUID is a unique 32 hexidecimal character identifier which you will find in the **KBeacon** app configuration screens.  Carefully copy/paste this ID from the KBeacon app into the SmartThings device Settings screen so as not to make a mistake.  This ID *must* contain dashes ("-") between the UUID segments.  They are **not** optional.  Note that the UUID can optionally be uniquely configured for Pro iBeacon devices, so be sure you've entered the correct ID for regular advertisements.
 
 #### NOT PRESENT Grace Period
 When a gateway is no longer receiving advertisements from a BLE device, it is assumed to be out of range.  For our purposes, we assume that the device is no longer present.  However, how long to wait until you assume the device is no longer present can depend on many things including configuration settings and environment.  So this device Settings field allows the user to adjust this "grace period" anywhere from 5 seconds to 10 minutes.
 
 
 ### Gateway Configuration Notes
-* Be sure to configure the Gateway for MQTT, providing the applicable information; I recommend a QoS of 1
-* Upload interval of 1 second seems OK
-* Scan parameters of 100 milliseconds seem OK
-* I recommend using the BLE filter parameters to keep the gateway from spending time processing other BLE signals to maximize reliability.  Provide a MAC list of your beacon devices in this option
+- Be sure to configure the Gateway for MQTT, providing the applicable information; I recommend a QoS of 1
+- Upload interval of 1 second seems OK
+- Scan parameters of 100 milliseconds seem OK
+- I recommend using the BLE filter parameters to keep the gateway from spending time processing other BLE signals to maximize reliability.  Provide a MAC list of your beacon devices in this option
 
 ### Beacon Configuration Notes
-* The settings you use will depend on what you are trying to accomplish.  My experience is limited and others may have better recommendations, but here is what I am using for basic presence purposes with an objective of optimizing beacon reliability & battery life:
+The settings you use will depend on what you are trying to accomplish.  My experience is limited and others may have better recommendations, but here is what I am using for basic presence purposes with an objective of optimizing beacon reliability & battery life:
   Advertising Interval:  5 seconds
   Transmission Power:  2-3 dBm
   Beacon Type:  for regular operation, iBeacon only (which will cover general presence, motion, and button pushes0, but during testing and to monitor battery useage you may want to temporarily include TLM
