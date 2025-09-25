@@ -56,6 +56,7 @@ When a gateway is no longer receiving advertisements from a BLE device, it is as
 
 ### Beacon Configuration Notes
 The settings you use will depend on what you are trying to accomplish.  My experience is limited and others may have better recommendations, but here is what I am using for basic presence purposes with an objective of optimizing beacon reliability & battery life:
+```
   Advertising Interval:  5 seconds
   Transmission Power:  2-3 dBm
   Beacon Type:  for regular operation, iBeacon only (which will cover general presence, motion, and button pushes0, but during testing and to monitor battery useage you may want to temporarily include TLM
@@ -74,8 +75,8 @@ The settings you use will depend on what you are trying to accomplish.  My exper
       Trigger Adv Time: 10 seconds
       Trigger Adv Interval:  2000 ms
       Trigger parameters -> Double click    Note that this follows recommendation of documentation.  Single clicks can too often be done accidently while banging around a purse or pocket.
-
-  Note that Pro configuration is a bit more complex and not covered here.  I can provide my settings upon request.
+```
+Note that Pro configuration is a bit more complex and not covered here.  I can provide my settings upon request.
 
 ### Notes about Reliability
 I've spent some time closely monitoring the beacons being sent out by these devices so I could tune the grace period to a minimal value, which in turn results in faster 'not present' conditions.  What I've found is that multiple gateways are definitely needed in all but the smallest homes, as the reliability rapidly falls off when more than a couple rooms are between the gateway and beacon device.  I have my beacons advertising every 5 seconds, and they do this about 80% of the time if in the same room as the gateway.  However there can be long periods when no beacon is received - perhaps due to various household interference from wifi, microwaves, other bluetooth devices, etc. (anything that uses 2.4Ghz).  I've found for me that a grace period of 50 seconds to a minute is necessary to ensure no false not-present conditions occur, which can wreak havoc on automations.  Your mileage will vary!  All in all, I'm pleased with the reliability and this is definitely more dependable than the moble location presence within SmartThings.
