@@ -20,6 +20,7 @@ One may also wonder why MQTT is required.  The Bluecharm GCG04 Gateway does in f
 - Configurable grace period to determine away/not-present condition
 
 ### Pre-requisites:
+- SmartThings Hub
 - Bluecharm BCG04
 - Bluecharm BC021 or similar
 - MQTT Broker (e.g. Mosquitto running on Raspberry Pi); server must be on the same subnet as your SmartThings hub
