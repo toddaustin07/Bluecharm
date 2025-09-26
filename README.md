@@ -100,7 +100,7 @@ The above configuration guidance mentioned to enable TLM data during testing. Be
 ### Notes about Reliability
 I've spent some time closely monitoring the beacons being sent out by these devices so I could tune the grace period to a minimal value, which in turn results in faster 'not present' conditions.  What I've found is that multiple gateways are definitely needed in all but the smallest homes, as the reliability rapidly falls off when more than a couple rooms are between the gateway and beacon device.  I have my beacons advertising every 5 seconds, and the gateway does indeed see this every 5 seconds about 80% of the time if they are reasonably close together.  However there can be periods when no advertisement is received - perhaps due to various household interference from wifi, microwaves, other bluetooth devices, etc. (anything that uses 2.4Ghz).  I've found for me that a grace period of 50 seconds to a minute is necessary to ensure no false not-present conditions occur, which can wreak havoc on automations.  Your mileage will vary!  
 
-All in all, I'm pleased with the reliability and this is definitely more dependable than the mobile location presence within SmartThings.
+All in all, I'm pleased with the reliability and this is definitely more dependable than the iphone location presence within SmartThings.
 
 ### Testing / Debugging
 It may be useful to use a utility like mosquitto_sub to monitor MQTT messages in a terminal window so you can see what the gateway is sending.  Something like the following command would be used:
