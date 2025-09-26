@@ -55,14 +55,14 @@ The iBeacon/Multibeacon UUID is a unique 32 hexadecimal character identifier whi
 When a gateway is no longer receiving advertisements from a BLE device, it is assumed to be out of range.  For our purposes, we assume that the device is no longer present.  However, how long to wait until you assume the device is no longer present can depend on many things including configuration settings and environment.  So this device Settings field allows the user to adjust this "grace period" anywhere from 5 seconds to 10 minutes.  The user will need to experiment with the values here to eliminate all false 'not-present' states reported for the SmartThings device.
 
 ### Gateway Configuration Notes
-This assumes you are using the KGateway mobile app per the manufacturer's instructions.
+This assumes you are using the KGateway mobile app per the manufacturer's instructions.  
 - Be sure to configure the Gateway for MQTT, providing the applicable information; I recommend a QoS of 1
 - Upload interval of 1 second seems OK
 - Scan parameters of 100 milliseconds seem OK
 - I recommend using the BLE filter parameters to keep the gateway from spending time processing other BLE signals to maximize reliability.  Provide a MAC list of your beacon devices in this option
 
 ### Beacon Configuration Notes
-This assumes you are using the KBeacon mobile app per the manufacturer's instructions.
+This assumes you are using the KBeacon mobile app per the manufacturer's instructions.  
 The settings you use will depend on what you are trying to accomplish.  My experience is limited and others may have better recommendations, but here is what I am using for basic presence purposes with an objective of optimizing beacon reliability & battery life:
 ```
   Advertising Interval:  5 seconds
@@ -94,7 +94,8 @@ There is a 30 second cooldown period in the driver for these advertisements, whi
 Also, for motion reports, the driver will automatically revert from 'motion' to 'no motion' device state after 10 seconds.
 
 ### TLM Data
-The above configuration guidance mentioned to enable TLM data during testing.  Be aware that this will fill up your SmartThings device history with a lot of data field updates, since signal strength is constantly changing.  However this may be useful during initial startup and testing.  Device temperature is interesting, but not very useful in most cases.  Remember, this is the **device** temperature, not the ambient temperature.  Battery level is reported by the device in millivolts and the Edge driver converts this to an estimated battery level in terms of percentage for a 2032 type button cell.  Once your testing is complete, it's recommmended to have TLM data normally disabled on the iBeacon device in order to reduce advertisements, preserve battery life, and keep device history focused on the more critical changes in presence, button pushes, and motion.
+Recall this transmits iBeacon device signal strength, battery level, and device temperature.  
+The above configuration guidance mentioned to enable TLM data during testing. Be aware that this will fill up your SmartThings device history with a lot of data field updates, since signal strength is constantly changing.  However this may be useful during initial startup and testing.  Device temperature is interesting, but not very useful in most cases.  Remember, this is the **device** temperature, not the ambient temperature.  Battery level is reported by the device in millivolts and the Edge driver converts this to an estimated battery level in terms of percentage for a 2032 type button cell.  Once your testing is complete, it's recommmended to have TLM data normally disabled on the iBeacon device in order to reduce advertisements, preserve battery life, and keep device history focused on the more critical changes in presence, button pushes, and motion.
 
 ### Notes about Reliability
 I've spent some time closely monitoring the beacons being sent out by these devices so I could tune the grace period to a minimal value, which in turn results in faster 'not present' conditions.  What I've found is that multiple gateways are definitely needed in all but the smallest homes, as the reliability rapidly falls off when more than a couple rooms are between the gateway and beacon device.  I have my beacons advertising every 5 seconds, and the gateway does indeed see this every 5 seconds about 80% of the time if they are reasonably close together.  However there can be periods when no advertisement is received - perhaps due to various household interference from wifi, microwaves, other bluetooth devices, etc. (anything that uses 2.4Ghz).  I've found for me that a grace period of 50 seconds to a minute is necessary to ensure no false not-present conditions occur, which can wreak havoc on automations.  Your mileage will vary!  
