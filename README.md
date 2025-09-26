@@ -40,7 +40,7 @@ Configure the various fields as follows:
 This should ordinarily not be changed, and should always contain "bluecharm/publish"
 
 #### Gateway MAC Addresses
-Note this says "Addresses" plural.  This means you can list more than one MAC address separated by commas.  You can find your BCG04 Gateway MAC address either from a label on the device itself, or by the **KGateway** app that is used to configure it.  Provide one or several MAC address
+Note this says "Addresses" plural.  This means you can list more than one MAC address separated by commas.  You can find your BCG04 Gateway MAC address either from a label on the device itself, or by the **KGateway** app that is used to configure it.  Provide one or several MAC address representing each of your Bluecharm BCG04 Gateway(s).
 
 ---
 ##### A note about MAC Addresses:  These must be 6 pairs of hexidecimal characters.  They can be entered as either a continuous sequence of 12 characters or 6 pairs separated with colons.
