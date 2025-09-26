@@ -55,12 +55,14 @@ The iBeacon/Multibeacon UUID is a unique 32 hexadecimal character identifier whi
 When a gateway is no longer receiving advertisements from a BLE device, it is assumed to be out of range.  For our purposes, we assume that the device is no longer present.  However, how long to wait until you assume the device is no longer present can depend on many things including configuration settings and environment.  So this device Settings field allows the user to adjust this "grace period" anywhere from 5 seconds to 10 minutes.  The user will need to experiment with the values here to eliminate all false 'not-present' states reported for the SmartThings device.
 
 ### Gateway Configuration Notes
+This assumes you are using the KGateway mobile app per the manufacturer's instructions.
 - Be sure to configure the Gateway for MQTT, providing the applicable information; I recommend a QoS of 1
 - Upload interval of 1 second seems OK
 - Scan parameters of 100 milliseconds seem OK
 - I recommend using the BLE filter parameters to keep the gateway from spending time processing other BLE signals to maximize reliability.  Provide a MAC list of your beacon devices in this option
 
 ### Beacon Configuration Notes
+This assumes you are using the KBeacon mobile app per the manufacturer's instructions.
 The settings you use will depend on what you are trying to accomplish.  My experience is limited and others may have better recommendations, but here is what I am using for basic presence purposes with an objective of optimizing beacon reliability & battery life:
 ```
   Advertising Interval:  5 seconds
