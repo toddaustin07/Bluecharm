@@ -93,7 +93,7 @@ There is a 30 second cooldown period in the driver for these advertisements, whi
 
 Also, for motion reports, the driver will automatically revert from 'motion' to 'no motion' device state after 10 seconds.
 
-#### TLM Data
+### TLM Data
 The above configuration guidance mentioned to enable TLM data during testing.  Be aware that this will fill up your SmartThings device history with a lot of data field updates, since signal strength is constantly changing.  However this may be useful during initial startup and testing.  Device temperature is interesting, but not very useful in most cases.  Remember, this is the **device** temperature, not the ambient temperature.  Battery level is reported by the device in millivolts and the Edge driver converts this to an estimated battery level in terms of percentage for a 2032 type button cell.  Once your testing is complete, it's recommmended to have TLM data normally disabled on the iBeacon device in order to reduce advertisements, preserve battery life, and keep device history focused on the more critical changes in presence, button pushes, and motion.
 
 ### Notes about Reliability
