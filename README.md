@@ -4,7 +4,7 @@ This driver supports only the Bluecharm Beacon Scanner Gateway BCG04 in an MQTT 
 
 ### What/Who is Bluecharm?
 
-Bluecharm is a company that sells BLE beacon products that have some popularity among home automation enthusiests.  [See their website here](https://bluecharmbeacons.com/)  Products include various iBeacons as well as contact sensors, buttons, humidity & temperature sensors, and gateways.
+Bluecharm is a company that sells BLE beacon products that have some popularity among home automation enthusiests.  [See their website here](https://bluecharmbeacons.com/)   Products include various iBeacons as well as contact sensors, buttons, humidity & temperature sensors, and gateways.
 
 ### Why a SmartThings Edge Driver?
 Bluetooth low-energy (BLE) devices can be useful features in a home automation setup.  They can be especially useful as presence sensors:  a replacement for the old and no-longer-available SmartThings presence sensor, or as a more reliable substitute for mobile device location presence within SmartThings.  An Edge driver provides a local-network-only solution for integrating BLE type devices into SmartThings.
