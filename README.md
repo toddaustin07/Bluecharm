@@ -4,13 +4,13 @@ This driver supports only the Bluecharm Beacon Scanner Gateway BCG04 in an MQTT 
 
 ### What/Who is Bluecharm?
 
-Bluecharm is a company that sells BLE beacon products that have some popularity among home automation enthusiests.  [See their website here](https://bluecharmbeacons.com/)
+Bluecharm is a company that sells BLE beacon products that have some popularity among home automation enthusiests.  [See their website here](https://bluecharmbeacons.com/)  Products include various iBeacons as well as contact sensors, buttons, humidity & temperature sensors, and gateways.
 
-### Why?
-Bluetooth low-energy (BLE) devices can be useful features in a home automation setup.  They can be especially useful as presence sensors:  a replacement for the old and no-longer-available SmartThings presence sensor, or as a more reliable substitute for mobile device location presence within Smartthings.
+### Why a SmartThings Edge Driver?
+Bluetooth low-energy (BLE) devices can be useful features in a home automation setup.  They can be especially useful as presence sensors:  a replacement for the old and no-longer-available SmartThings presence sensor, or as a more reliable substitute for mobile device location presence within SmartThings.  An Edge driver provides a local-network-only solution for integrating BLE type devices into SmartThings.
 
 #### MQTT
-One may also wonder why MQTT is required.  The Bluecharm GCG04 Gateway does in fact also support regular wifi-based communication, however because other network apps can't initiate communication to a Smartthings hub Edge driver, it probably cannot be made to work.  MQTT was the quickest route to getting this up and running for me and met my objective a purely local solution.  Perhaps Matter will be supported in the future, which would make this driver obsolete.
+One may also wonder why MQTT is required.  The Bluecharm GCG04 Gateway does in fact also support regular wifi-based communication, however because other network apps can't initiate communication to a Smartthings hub Edge driver, it probably cannot be made to work without some hassle.  MQTT was the quickest route to getting this up and running for me and met my objective of a purely local solution.  Perhaps Matter will be supported in the future, which would make this driver obsolete.
 
 ### Features
 - Supports multiple BCG04 gateways
