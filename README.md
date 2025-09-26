@@ -31,9 +31,9 @@ One may also wonder why MQTT is required.  The Bluecharm GCG04 Gateway does in f
 Once the driver has been installed on your SmartThings hub, from the mobile app, perform an Add Device / Scan nearby and a new device will be created called "Bluecharm MQTT".  Look for this device and open it.  From its Controls screen tap the 3 vertical dot menu in the upper right corner to select device Settings.  Here, provide your MQTT Broker username & password, and its IP address (make sure you have this IP address set as static on your router so it does not change).  Save your changes, and if successful, you should see "Connected to Broker" back on the device Controls screen.  The Refresh button there can be used to force a re-connection with the broker, although this is really only needed as a last resort.
 
 ## Creating and configuring Beacon devices
-From the Bluecharm MQTT device Controls screen, tap the top field "Select & Create Beacon Device".  This will display a list of known Beacon types sold by Bluecharm.  Note that only the BC021 MultiBeacon or BC021 Pro iBeacon are currently supported.  Choosing any other type will result in a "Not Supported" message back on the Controls screen.
+From the Bluecharm MQTT device Controls screen, tap the top field "Select & Create Beacon Device".  This will display a list of known Beacon types sold by Bluecharm.  Note that only the BC021 MultiBeacon or BC021 Pro iBeacon are currently supported.  Choosing any other type will result in a "Not Supported" message back on the Controls screen.  Repeat this procedure for each iBeacon device you want to have in SmartThings.
 
-Once a beacon type is selected, a new device will be created.  Find it, open it, and go to the device Settings screen as descibed above.  Repeat this procedure for each iBeacon device, then configure the various fields in each SmartThings device as follows:
+Once a beacon type is selected, a new device will be created.  Find it, open it, and go to the device Settings screen as descibed above and configure the various fields in each SmartThings device as follows:
 
 #### MQTT Topic Prefix
 This should ordinarily not be changed, and should always contain "bluecharm/publish"
