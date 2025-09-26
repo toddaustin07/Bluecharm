@@ -2,6 +2,10 @@
 
 This driver supports only the Bluecharm Beacon Scanner Gateway BCG04 in an MQTT configuration.  It has only been tested with the standard and Pro versions of the BC021 iBeacon Multibeacon, which supports button triggers and motion sensor.  However it can be extended to support other beacon products if users request and can perform the testing.
 
+### What/Who is Bluecharm?
+
+Bluecharm is a company that sells BLE beacon products that have some popularity among home automation enthusiests.  [See their website here](https://bluecharmbeacons.com/)
+
 ### Why?
 Bluetooth low-energy (BLE) devices can be useful features in a home automation setup.  They can be especially useful as presence sensors:  a replacement for the old and no-longer-available SmartThings presence sensor, or as a more reliable substitute for mobile device location presence within Smartthings.
 
