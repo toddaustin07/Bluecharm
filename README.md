@@ -59,7 +59,7 @@ This assumes you are using the KGateway mobile app per the manufacturer's instru
 - Be sure to configure the Gateway for MQTT, providing the applicable information; I recommend a QoS of 1
 - Upload interval of 1 second seems OK
 - Scan parameters of 100 milliseconds seem OK
-- I recommend using the BLE filter parameters to keep the gateway from spending time processing other BLE signals to maximize reliability.  Provide a MAC list of your beacon devices in this option
+- I recommend using the BLE filter parameters to keep the gateway from spending time processing other BLE signals to maximize reliability.  Provide a MAC list of your beacon devices in this option.
 
 ### Beacon Configuration Notes
 This assumes you are using the KBeacon mobile app per the manufacturer's instructions.<br><br>
