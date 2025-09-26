@@ -107,6 +107,6 @@ It may be useful to use a utility like mosquitto_sub to monitor MQTT messages in
 ```
 mosquitto_sub -u <userid> -P <password> -h localhost -t 'bluecharm/publish/+' -v
 ```
-This will output the MQTT topic and message data for anything seen for the bluecharm/publish topic for all gateways.  Replace the '+' with a specific gateway MAC address (without colons).
+This will output the MQTT topic and message data for anything seen for the bluecharm/publish topic for all gateways.  Replace the '+' with a specific gateway MAC address (without colons) if you want to monitor only for a specific gateway.
 
 The next level of debugging would be to monitor the driver logs using the [SmartThings CLI](https://github.com/SmartThingsCommunity/smartthings-cli).
