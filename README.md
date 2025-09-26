@@ -53,8 +53,7 @@ Find your BC021 MAC address either from a label on the device itself, or by the 
 The iBeacon/Multibeacon UUID is a unique 32 hexidecimal character identifier which you will find in the **KBeacon** app configuration screens.  Carefully copy/paste this ID from the KBeacon app into the SmartThings device Settings screen so as not to make a mistake.  This ID *must* contain dashes ("-") between the UUID segments.  They are **not** optional.  Note that the UUID can optionally be uniquely configured in **Pro** iBeacon devices, so be sure you've entered the correct ID for regular advertisements.
 
 #### NOT PRESENT Grace Period
-When a gateway is no longer receiving advertisements from a BLE device, it is assumed to be out of range.  For our purposes, we assume that the device is no longer present.  However, how long to wait until you assume the device is no longer present can depend on many things including configuration settings and environment.  So this device Settings field allows the user to adjust this "grace period" anywhere from 5 seconds to 10 minutes.
-
+When a gateway is no longer receiving advertisements from a BLE device, it is assumed to be out of range.  For our purposes, we assume that the device is no longer present.  However, how long to wait until you assume the device is no longer present can depend on many things including configuration settings and environment.  So this device Settings field allows the user to adjust this "grace period" anywhere from 5 seconds to 10 minutes.  The user will need to experiment with the values here to eliminate all false 'not-present' states.
 
 ### Gateway Configuration Notes
 - Be sure to configure the Gateway for MQTT, providing the applicable information; I recommend a QoS of 1
