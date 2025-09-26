@@ -33,8 +33,7 @@ Once the driver has been installed on your SmartThings hub, from the mobile app,
 ## Creating and configuring Beacon devices
 From the Bluecharm MQTT device Controls screen, tap the top field "Select & Create Beacon Device".  This will display a list of known Beacon types sold by Bluecharm.  Note that only the BC021 MultiBeacon or BC021 Pro iBeacon are currently supported.  Choosing any other type will result in a "Not Supported" message back on the Controls screen.
 
-Once a beacon type is selected, a new device will be created.  Find it, open it, and go to the device Settings screen as descibed above.
-Configure the various fields as follows:
+Once a beacon type is selected, a new device will be created.  Find it, open it, and go to the device Settings screen as descibed above.  Repeat this procedure for each iBeacon device, then configure the various fields in each SmartThings device as follows:
 
 #### MQTT Topic Prefix
 This should ordinarily not be changed, and should always contain "bluecharm/publish"
