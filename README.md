@@ -105,7 +105,7 @@ All in all, I'm pleased with the reliability and this is definitely more dependa
 ### Testing / Debugging
 It may be useful to use a utility like mosquitto_sub to monitor MQTT messages in a terminal window so you can see what the gateway is sending.  Something like the following command would be used:
 ```
-mosquitto_sub -u \<userid\> -P \<password\> -h localhost -t 'bluecharm/publish/+' -v
+mosquitto_sub -u <userid> -P <password> -h localhost -t 'bluecharm/publish/+' -v
 ```
 This will output the MQTT topic and message data for anything seen for the bluecharm/publish topic for all gateways.  Replace the '+' with a specific gateway MAC address (without colons).
 
