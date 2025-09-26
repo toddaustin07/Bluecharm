@@ -89,7 +89,7 @@ Note that Pro configuration is a bit more complex and not covered here.  I can p
 ### Motion and Button Reporting
 There is a 30 second cooldown period in the driver for these advertisements, which means multiple motion or button triggers received within the same 30-second window are ignored.  Keep this in mind as you experiment with different Trigger Advertisement times and intervals in iBeacon configuration.
 
-Also, for motion reports, the driver will automatically revert from 'motion' to 'no motion' after 10 seconds.
+Also, for motion reports, the driver will automatically revert from 'motion' to 'no motion' device state after 10 seconds.
 
 ### Notes about Reliability
 I've spent some time closely monitoring the beacons being sent out by these devices so I could tune the grace period to a minimal value, which in turn results in faster 'not present' conditions.  What I've found is that multiple gateways are definitely needed in all but the smallest homes, as the reliability rapidly falls off when more than a couple rooms are between the gateway and beacon device.  I have my beacons advertising every 5 seconds, and the gateway does indeed see this every 5 seconds about 80% of the time if they are reasonably close together.  However there can be periods when no advertisement is received - perhaps due to various household interference from wifi, microwaves, other bluetooth devices, etc. (anything that uses 2.4Ghz).  I've found for me that a grace period of 50 seconds to a minute is necessary to ensure no false not-present conditions occur, which can wreak havoc on automations.  Your mileage will vary!  
